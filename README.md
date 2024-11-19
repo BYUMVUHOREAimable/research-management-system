@@ -69,20 +69,6 @@ Now you can start the Django development server:
 python manage.py runserver
 Visit http://127.0.0.1:8000 to access the site.
 
-Frontend Setup (Optional)
-To build custom frontend assets, follow these steps:
-
-Install Node.js and npm if you haven't already.
-Install frontend dependencies:
-npm install
-Build the assets for production:
-npm run build
-Testing
-To run the tests for the project, execute the following command:
-
-python manage.py test
-Deployment
-For production, use a WSGI server like Gunicorn, and configure it behind a web server like Nginx.
 
 pip install gunicorn
 Start Gunicorn:
