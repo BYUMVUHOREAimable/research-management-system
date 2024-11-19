@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <header class="py-20 text-center bg-gradient-to-r from-sky-500 to-indigo-500 text-white shadow-lg">
+        <h1 class="text-5xl font-bold mb-4 animate-fade-in">Welcome to the Research Management System</h1>
+        <p class="text-lg font-light max-w-2xl mx-auto">Your ultimate platform for organizing, managing, and collaborating on research projects efficiently. Unlock the future of research management!</p>
+        
+        <!-- Call-to-Action Button -->
+        <div class="mt-8">
+            <a href="{% url 'account:signup' %}" class="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg shadow-md hover:bg-indigo-100 transition duration-300 ease-in-out transform hover:scale-105">
+                Get Started
+            </a>
+        </div>
+    </header>
+
+    <!-- Additional Content Section (if needed) -->
+    <div class="py-10 px-6 container mx-auto">
+        <p class="text-center text-gray-700">Start exploring features, managing projects, and collaborating with your team!</p>
+    </div>
+{% endblock %}

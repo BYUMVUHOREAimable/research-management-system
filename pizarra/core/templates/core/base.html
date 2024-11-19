@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Research Management System</title>
+    </head>
+
+    <body class="bg-gray-100 text-gray-800">
+        <!-- Navbar -->
+        <nav class="py-4 px-8 bg-slate-800 shadow-lg">
+            <div class="container mx-auto flex items-center justify-between">
+                <!-- Logo / Title -->
+                <h1 class="text-2xl font-semibold text-white hover:text-sky-400 transition duration-300">
+                    <a href="{% url 'core:index' %}">Research Management System</a>
+                </h1>
+
+                <!-- Navigation Links -->
+                <div class="flex space-x-4">
+                    <a href="{% url 'core:about' %}" class="text-white hover:text-sky-400 transition duration-300">About</a>
+
+                    {% if request.user.is_authenticated %}
+                        <a href="{% url 'project:projects' %}" class="py-2 px-6 bg-sky-600 text-white rounded-lg hover:bg-sky-500 transition duration-300">Projects</a>
+                    {% else %}
+                        <a href="{% url 'account:login' %}" class="py-2 px-6 bg-slate-600 text-white rounded-lg hover:bg-slate-500 transition duration-300">Log in</a>
+                        <a href="{% url 'account:signup' %}" class="py-2 px-6 bg-sky-600 text-white rounded-lg hover:bg-sky-500 transition duration-300">Sign up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="py-10 px-6 container mx-auto">
+            <div class="bg-white p-8 shadow-lg rounded-lg">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-6 bg-slate-900 text-center text-gray-300">
+            <p>&copy; 2024 - Created by <span class="font-semibold">BYUMVUHORE Aimable</span></p>
+        </footer>
+    </body>
+</html>

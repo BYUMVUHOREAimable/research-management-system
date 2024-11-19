@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="max-w-6xl mx-auto py-8 px-6 bg-slate-800 rounded-lg shadow-lg">
+        <!-- Todo List Title -->
+        <h1 class="text-4xl font-semibold text-white">{{ todolist.name }}</h1>
+
+        <!-- Todo List Description -->
+        {% if todolist.description %}
+            <p class="mt-4 text-lg text-slate-400">{{ todolist.description }}</p>
+        {% endif %}
+
+        <!-- Action Buttons -->
+        <div class="mt-6 space-x-4">
+            <a href="{% url 'task:add' project.id todolist.id %}" class="py-4 px-8 bg-emerald-600 text-white inline-block rounded-lg hover:bg-emerald-700 transition duration-300">Add task</a>
+            <a href="{% url 'todolist:edit' project.id todolist.id %}" class="py-4 px-8 bg-sky-600 text-white inline-block rounded-lg hover:bg-sky-700 transition duration-300">Edit</a>
+            <a href="{% url 'todolist:delete' project.id todolist.id %}" class="py-4 px-8 bg-amber-600 text-white inline-block rounded-lg hover:bg-amber-700 transition duration-300">Delete</a>
+        </div>
+
+        <!-- Task List -->
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {% for task in todolist.tasks.all %}
+                <div class="py-6 px-6 bg-slate-200 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                    <a href="{% url 'task:detail' todolist.project.id todolist.id task.id %}">
+                        <h2 class="mb-4 text-xl font-semibold text-slate-800">{{ task.name }}</h2>
+                        <p class="text-sm text-slate-600">{{ task.description }}</p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

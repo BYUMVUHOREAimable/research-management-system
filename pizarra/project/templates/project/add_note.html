@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="max-w-lg mx-auto py-8 px-6 bg-slate-800 rounded-lg shadow-lg">
+        <h1 class="mb-6 text-4xl font-semibold text-white text-center">Add Note</h1>
+
+        <form class="mt-6 space-y-6" method="post" action=".">
+            {% csrf_token %}
+
+            <div class="text-left">
+                <label for="name" class="block mb-2 text-slate-300 font-semibold">Name</label>
+                <input id="name" name="name" type="text" required
+                    class="w-full py-3 px-4 bg-slate-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-200">
+            </div>
+
+            <div class="text-left">
+                <label for="body" class="block mb-2 text-slate-300 font-semibold">Body</label>
+                <textarea id="body" name="body" rows="10" required
+                    class="w-full py-3 px-4 bg-slate-700 text-white rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-200"></textarea>
+            </div>
+
+            <div class="text-center">
+                <button type="submit"
+                    class="py-3 px-8 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition duration-300">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

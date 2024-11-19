@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="bg-slate-50 text-slate-800">
+        <!-- Navbar -->
+        <nav class="py-6 px-8 flex items-center justify-between bg-slate-800 shadow-lg">
+            <h1 class="text-xl text-white font-semibold">Research Management System</h1>
+
+            <div class="space-x-4">
+                <a href="#" class="text-white hover:text-sky-500 transition duration-300">About</a>
+
+                <a href="#" class="py-2 px-6 bg-slate-600 text-white rounded-lg hover:bg-slate-500 transition duration-300">Log in</a>
+                <a href="#" class="py-2 px-6 bg-sky-600 text-white rounded-lg hover:bg-sky-500 transition duration-300">Sign up</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="py-8 px-8 max-w-4xl mx-auto">
+            <div class="max-w-xl mx-auto py-8 bg-slate-800 text-center rounded-lg shadow-xl">
+                <h1 class="text-3xl text-white font-semibold">Sign up</h1>
+
+                <form class="mt-6 space-y-6">
+                    <!-- E-mail input -->
+                    <div>
+                        <label class="text-white">E-mail</label><br>
+                        <input type="email" class="w-full py-4 px-6 bg-slate-500 text-white rounded-lg" placeholder="Enter your email" required>
+                    </div>
+
+                    <!-- Password input -->
+                    <div>
+                        <label class="text-white">Password</label><br>
+                        <input type="password" class="w-full py-4 px-6 bg-slate-500 text-white rounded-lg" placeholder="Enter your password" required>
+                    </div>
+
+                    <!-- Repeat password input -->
+                    <div>
+                        <label class="text-white">Repeat password</label><br>
+                        <input type="password" class="w-full py-4 px-6 bg-slate-500 text-white rounded-lg" placeholder="Repeat your password" required>
+                    </div>
+
+                    <!-- Submit button -->
+                    <div>
+                        <button type="submit" class="py-4 px-8 bg-sky-600 text-white rounded-lg w-full hover:bg-sky-500 transition duration-300">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-8 px-8 bg-slate-900 text-center text-slate-400">
+            <p>&copy; 2023 Research Management System. All rights reserved. Developed by BYUMVUHORE Aimable.</p>
+        </footer>
+    </body>
+</html>

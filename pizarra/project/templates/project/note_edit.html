@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="max-w-2xl mx-auto py-8 px-6 bg-slate-800 rounded-lg shadow-lg">
+        <h1 class="mb-6 text-4xl font-semibold text-white">Edit note</h1>
+
+        <form class="mt-6 space-y-6" method="post" action=".">
+            {% csrf_token %}
+
+            <div>
+                <label class="text-white block text-lg">Name</label>
+                <input value="{{ note.name }}" name="name" type="text" 
+                    class="w-full py-4 px-6 bg-slate-500 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
+            </div>
+
+            <div>
+                <label class="text-white block text-lg">Body</label>
+                <textarea name="body" class="w-full py-4 px-6 bg-slate-500 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500" rows="20">{{ note.body }}</textarea>
+            </div>
+
+            <div>
+                <button class="py-4 px-8 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition duration-300">Save changes</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
